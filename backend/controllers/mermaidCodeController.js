@@ -2,7 +2,7 @@ import Groq from "groq-sdk";
 import { getMermaidPromptExamples } from "../utils/mermaidPromptExamples.js";
 
 const groq = new Groq({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
+  apiKey: process.env.VITE_GROQ_API_KEY,
   dangerouslyAllowBrowser: true,
 });
 

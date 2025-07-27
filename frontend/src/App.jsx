@@ -1,13 +1,20 @@
-import React from 'react'
-import MultiLangCodeEditor from './components/MultiLangEditor'
+import React from "react";
+import LandingPage from "./pages/LandingPage";
+import Dashboard from "./pages/Dashboard";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">VisualAlgo</h1>
-      <MultiLangCodeEditor />
-    </div>
-  )
-}
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;
