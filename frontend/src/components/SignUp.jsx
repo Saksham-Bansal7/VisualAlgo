@@ -91,11 +91,11 @@ const SignUp = ({ onClose, onSwitchToLogin, onSuccess }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 relative">
+    <div className="bg-white/50 backdrop-blur-md border border-white/20 rounded-xl sm:rounded-2xl p-6 sm:p-8 w-full max-w-sm sm:max-w-md shadow-2xl">
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+        className="absolute top-4 right-4 text-gray-900 hover:text-gray-600 transition-colors"
       >
         <X size={20} />
       </button>

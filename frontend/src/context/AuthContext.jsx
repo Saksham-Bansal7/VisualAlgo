@@ -95,7 +95,7 @@ export const AuthProvider = ({ children }) => {
 
       {/* Login Modal */}
       {showLogin && (
-        <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-md flex items-center justify-center z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <Login
             onClose={closeModals}
             onSwitchToSignUp={() => {
@@ -111,7 +111,7 @@ export const AuthProvider = ({ children }) => {
 
       {/* SignUp Modal */}
       {showSignUp && (
-        <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-md flex items-center justify-center z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <SignUp
             onClose={closeModals}
             onSwitchToLogin={() => {

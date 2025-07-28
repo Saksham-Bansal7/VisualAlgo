@@ -22,40 +22,23 @@ const Login = ({ onClose, onSwitchToSignUp, onSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoading(true); 
     setError("");
 
     try {
-      console.log("Submitting login data:", formData);
-
       const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, formData);
 
-      console.log("Login response:", response.data);
-
-      // Handle both old and new response formats
-      if (response.data.success || response.data.token) {
-        const userData = response.data.user || {
-          _id: response.data._id,
-          name: response.data.name,
-          email: response.data.email,
-        };
-        const token = response.data.token;
-
-        console.log("Login successful, user data:", userData, "token:", token);
-
+      if (response.data.success) {
         // Call onSuccess with user data and token if provided
         if (onSuccess) {
-          onSuccess(userData, token);
+          onSuccess(response.data.user, response.data.token);
         } else {
           // Fallback: store manually and reload
-          localStorage.setItem("token", token);
-          localStorage.setItem("user", JSON.stringify(userData));
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("user", JSON.stringify(response.data.user));
           onClose();
-          window.location.href = "/"; 
+          window.location.reload();
         }
-      } else {
-        console.log("Login failed - no success or token in response");
-        setError("Login failed. Please try again.");
       }
     } catch (error) {
       setError(
@@ -67,11 +50,11 @@ const Login = ({ onClose, onSwitchToSignUp, onSuccess }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 relative">
+    <div className="bg-white/50 backdrop-blur-md border border-white/20 rounded-xl sm:rounded-2xl p-6 sm:p-8 w-full max-w-sm sm:max-w-md shadow-2xl">
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+        className="absolute top-4 right-4 text-gray-4\900 hover:text-gray-600 transition-colors"
       >
         <X size={20} />
       </button>

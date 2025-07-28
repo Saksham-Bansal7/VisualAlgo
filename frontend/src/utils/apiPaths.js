@@ -16,5 +16,6 @@ export const API_PATHS = {
     DELETE: (id) => `/api/flowcharts/${id}`,
   },
   MERMAID_CODE: "/api/mermaidCode",
+  ALGORITHM_EXPLANATION: "/api/algorithmExplanation",
 };
  

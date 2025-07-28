@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Menu, X, Code, ArrowRight, User, LogOut } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isLandingPage = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logout, openLogin, openSignUp } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -21,7 +23,7 @@ const Navbar = ({ isLandingPage = true }) => {
             </div>
 
             {/* Desktop Navigation - Only show on landing page */}
-            {isLandingPage && (
+            {isLandingPage ?(
               <div className="hidden md:flex items-center space-x-8">
                 <a
                   href="#features"
@@ -42,7 +44,21 @@ const Navbar = ({ isLandingPage = true }) => {
                   Examples
                 </a>
               </div>
-            )}
+            ):
+            <div className="hidden md:flex items-center space-x-8">
+                <a
+                  onClick={() => navigate("/dashboard")}
+                  className="hover:text-gray-200 transition-colors"
+                >
+                  Playground
+                </a>
+                <a
+                  onClick={() => navigate("/dashboard/history")}
+                  className="hover:text-gray-200 transition-colors"
+                >
+                  History
+                </a>
+              </div>}
 
             {/* Desktop Auth Buttons */}
             <div className="hidden md:flex items-center space-x-4">

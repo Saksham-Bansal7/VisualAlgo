@@ -7,6 +7,7 @@ import { connectDB } from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
 import flowchartRoutes from './routes/sourceCodeRoutes.js';
 import { mermaidCode } from './controllers/mermaidCodeController.js';
+import { getAlgorithmExplanation } from './controllers/algorithmController.js';
 
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(helmet());
 app.use('/api/auth', userRoutes);
 app.use('/api/flowcharts', flowchartRoutes);
 app.post('/api/mermaidCode', protect, mermaidCode);
+app.post('/api/algorithmExplanation', protect, getAlgorithmExplanation);
 
 //welcome message
 app.get('/', (req, res) => {
