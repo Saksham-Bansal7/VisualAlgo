@@ -1,5 +1,5 @@
 
-export const BASE_URL = "http://localhost:5000"; // Change to your backend URL if needed
+export const BASE_URL = import.meta.env.VITE_BACKEND_URL // Change to your backend URL if needed
 
 export const API_PATHS = {
   AUTH: {
@@ -7,7 +7,7 @@ export const API_PATHS = {
     LOGIN: "/api/auth/login",
     GET_PROFILE: "/api/auth/profile",
   },
-  
+   
   FLOWCHARTS: {
     CREATE: "/api/flowcharts",
     GET_ALL: "/api/flowcharts",
