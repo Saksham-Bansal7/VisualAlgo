@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Menu, X, Code, ArrowRight, User, LogOut } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isLandingPage = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logout, openLogin, openSignUp } = useAuth();
-  const navigate = useNavigate();
 
   return (
     <>
@@ -23,7 +21,7 @@ const Navbar = ({ isLandingPage = true }) => {
             </div>
 
             {/* Desktop Navigation - Only show on landing page */}
-            {isLandingPage ?(
+            {isLandingPage ? (
               <div className="hidden md:flex items-center space-x-8">
                 <a
                   href="#features"
@@ -44,21 +42,22 @@ const Navbar = ({ isLandingPage = true }) => {
                   Examples
                 </a>
               </div>
-            ):
-            <div className="hidden md:flex items-center space-x-8">
+            ) : (
+              <div className="hidden md:flex items-center space-x-8">
                 <a
-                  onClick={() => navigate("/dashboard")}
-                  className="hover:text-gray-200 transition-colors"
+                  href="/playground"
+                  className="hover:text-gray-200 transition-colors cursor-pointer"
                 >
                   Playground
                 </a>
                 <a
-                  onClick={() => navigate("/dashboard/history")}
-                  className="hover:text-gray-200 transition-colors"
+                  href="/history"
+                  className="hover:text-gray-200 transition-colors cursor-pointer"
                 >
                   History
                 </a>
-              </div>}
+              </div>
+            )}
 
             {/* Desktop Auth Buttons */}
             <div className="hidden md:flex items-center space-x-4">
@@ -110,7 +109,7 @@ const Navbar = ({ isLandingPage = true }) => {
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {isLandingPage && (
+                {isLandingPage ? (
                   <>
                     <a
                       href="#features"
@@ -132,6 +131,23 @@ const Navbar = ({ isLandingPage = true }) => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Examples
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href="/playground"
+                      className="block hover:text-gray-200 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Playground
+                    </a>
+                    <a
+                      href="/history"
+                      className="block hover:text-gray-200 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      History
                     </a>
                   </>
                 )}
