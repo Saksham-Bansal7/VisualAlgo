@@ -15,7 +15,7 @@ const mermaidCode = async (sourceCode, language) => {
           role: "user",
           content: `${promptExamples} - to Generate a mermaid diagram code from the below ${language} source code - ${sourceCode}
 
-Return only mermaid js code in flowchart form only, follow all the syntax of mermaidjs flowchart strictly}`,
+Return only mermaid js code of the given source code only (not of the examples) in flowchart form only, follow all the syntax of mermaidjs flowchart strictly}`,
         },
       ],
       model: "llama3-8b-8192",

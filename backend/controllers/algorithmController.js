@@ -17,7 +17,12 @@ const getAlgorithmExplanation = async (sourceCode, language) => {// Generate an 
           ${sourceCode}
           `
         }
-      ]
+      ],
+      model: "llama3-8b-8192",
+      temperature: 0.7,
+      max_tokens: 3000,
+      top_p: 1,
+      stream: false,
     });
     return response;
   } catch (error) {
