@@ -5,9 +5,6 @@
 Turn your source code into easy-to-understand flowcharts with just one click. Whether you're a developer, student, or educator, VisualAlgo helps you visualize logic, debug faster, and explain code effortlessly. Supports multiple programming languages, powered by GROQ AI and MermaidJS.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen)](https://visualalgo.onrender.com)
-[![Tech Stack](https://img.shields.io/badge/Tech%20Stack-MERN-blue)](#tech-stack)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](#license)
-
 ## 🌟 Features
 
 ### 🚀 Core Functionality
@@ -24,7 +21,6 @@ Turn your source code into easy-to-understand flowcharts with just one click. Wh
 - **Code History**: Save, manage, and revisit your algorithm visualizations
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **User Authentication**: Secure login/signup with JWT authentication
-- **Project Management**: Organize and track your coding projects
 
 ### 🧠 AI Features
 
@@ -61,12 +57,6 @@ Turn your source code into easy-to-understand flowcharts with just one click. Wh
 - **bcryptjs** - Password hashing
 - **CORS** - Cross-origin resource sharing
 - **Helmet** - Security middleware
-
-### Development Tools
-
-- **ESLint** - Code linting and quality
-- **Prettier** - Code formatting
-- **Nodemon** - Auto-restart development server
 
 ## 🚀 Getting Started
 
@@ -245,35 +235,6 @@ VisualAlgo/
 └── README.md
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Guidelines
-
-- Follow ESLint and Prettier configurations
-- Write meaningful commit messages
-- Add comments for complex logic
-- Test your changes thoroughly
-
-## 🐛 Bug Reports & Feature Requests
-
-Found a bug or have a feature idea? Please open an issue with:
-
-- Clear description of the problem/feature
-- Steps to reproduce (for bugs)
-- Expected vs actual behavior
-- Screenshots if applicable
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -283,14 +244,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **React Community** - For the amazing ecosystem
 - **TailwindCSS** - For the utility-first CSS framework
 
-## 📞 Contact
-
-- **Website**: [https://visualalgo.onrender.com](https://visualalgo.onrender.com)
-- **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
-- **Email**: your.email@example.com
-
 ---
 
 ⭐ **Star this repository if you found it helpful!** ⭐
-
-_Made with ❤️ for developers, students, and educators worldwide_
